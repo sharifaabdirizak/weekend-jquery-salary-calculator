@@ -91,6 +91,14 @@ function calculateMonthlyBudget() {
     let employeesPaidOut = Math.round(employeeMonthlyBudget/12);
     let monthly = ('$' + employeesPaidOut);
     $('#monthlyBudget').text(`Total Monthly: ${monthly}`);
-12
+
+    //If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost.
+
+    if(employeesPaidOut >= 20000) {
+        $('#totalMonthlyBudget').addClass('overBudget');  
+    }else{
+        $('#totalMonthlyBudget').removeClass('overBudget'); 
+    }
+    updateEmployees();
 
 }
