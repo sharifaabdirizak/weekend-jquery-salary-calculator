@@ -19,7 +19,7 @@ function submitEmployee(){
     let newFirstName= $('#firstNameInput').val();
     let newLastName= $('#lastNameInput').val();
     let newid= $('#idInput').val();
-    let newTile= $('#tileInput').val();
+    let newTitle= $('#titleInput').val();
     let newAnnualSalary= $('#annualSalaryInput').val();
 
     //make employee object
@@ -27,7 +27,7 @@ function submitEmployee(){
         firstName: newFirstName,
         lastName: newLastName,
         id: newid,
-        title: newTile,
+        title: newTitle,
         annualSalary: Number(newAnnualSalary)
     }
 
@@ -39,6 +39,13 @@ function submitEmployee(){
 
     //update monthly budget
     calculateMonthlyBudget();
+
+    //empty inputs
+    $('#firstNameInput').val('');
+    $('#lastNameInput').val('');
+    $('#idInput').val('');
+    $('#titleInput').val('');
+    $('#annualSalaryInput').val('');
 
 }
 
