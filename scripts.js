@@ -5,7 +5,7 @@ function onReady() {
     //Testing to see if jquery is working to console
     console.log("my jquery is working");
     $('#addNewEmployee').on('click', submitEmployee);
-
+    $('#currentEmployees').on('click', '.deleteButton', deleteEmployee);
 }
 //created employee array
 let employees = [];
@@ -101,4 +101,12 @@ function calculateMonthlyBudget() {
     }
     updateEmployees();
 
+}
+
+//function to delete employee from table
+function deleteEmployee() {
+    //see if employee button is working 
+    console.log("deleted employee");
+    $(this).parent().parent().remove();
+    
 }
