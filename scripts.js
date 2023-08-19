@@ -28,7 +28,7 @@ function submitEmployee(){
         lastName: newLastName,
         id: newid,
         title: newTile,
-        annualSalary: newAnnualSalary
+        annualSalary: Number(newAnnualSalary)
     }
 
     //add to newEmployee object to employees array
@@ -36,6 +36,9 @@ function submitEmployee(){
 
     // updating employee table
     updateEmployees();
+
+    //update monthly budget
+    calculateMonthlyBudget();
 
 }
 
@@ -74,4 +77,20 @@ function updateEmployees() {
         }
 
     }
+}
+
+//function to calculate the monthly budget
+function calculateMonthlyBudget() {
+    //start off with budget = 0
+    let employeeMonthlyBudget = 0;
+
+    for (let i=0; i <employees.length; i++) {
+        employeeMonthlyBudget += Number(employees[i].annualSalary)
+    }
+
+    let employeesPaidOut = Math.round(employeeMonthlyBudget/12);
+    let monthly = ('$' + employeesPaidOut);
+    $('#monthlyBudget').text(`Total Monthly: ${monthly}`);
+12
+
 }
