@@ -33,7 +33,7 @@ function submitEmployee(){
 
     //add to newEmployee object to employees array
     employees.push(newEmployee);
-
+    
     // updating employee table
     updateEmployees();
 
